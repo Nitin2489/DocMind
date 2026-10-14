@@ -9,7 +9,7 @@ Upload PDFs, text or Markdown files, ask a question in plain English, and DocMin
 ## Features
 
 - **Upload and manage documents** (PDF, TXT, MD) through a drag-and-drop web UI; filter a question to chosen files.
-- **Hybrid retrieval:** BM25 keyword ranking and dense-vector similarity, combined with reciprocal rank fusion.
+- **Hybrid retrieval:** BM25 keyword ranking and hashing-based vector similarity, combined with reciprocal rank fusion (RRF).
 - **Grounded, cited answers** using Claude or OpenAI (retrieval-augmented generation). The prompt tells the model to answer only from the sources and to treat document text as untrusted data (prompt-injection mitigation).
 - **Works with no API key:** an offline extractive mode returns the best-matching sentences with citations, so you can try it immediately.
 - **Graceful degradation:** if the LLM request fails, the app falls back to extractive mode and shows a warning.
@@ -76,13 +76,17 @@ Retrieval evaluation (15 hand-written questions over the 3 sample documents, spl
 | Vector only | 80% | 87% | 93% | 0.850 |
 | Hybrid (RRF) | 80% | 93% | 93% | 0.844 |
 
-This is a very small test, so the three methods are not meaningfully different here; treat it as a sanity check and a harness for experiments, not a benchmark.
+The evaluation uses 15 hand-written questions over three sample documents and provides a baseline for comparing retrieval methods. The results are preliminary and should not be interpreted as a representative benchmark of retrieval quality.
+
+## CI
+
+GitHub Actions runs the automated test suite and retrieval evaluation on pushes to `main` and pull requests.
 
 ## Limitations
 
 - The default embedder is a **hashing-trick** model: it matches words and phrases, not meaning. It misses pure paraphrases (for example "2FA" vs "two-factor authentication", or "price" vs "costs"). Swapping in a neural embedding model only requires implementing `embed()` in `embeddings.py`.
 - Scanned PDFs (images) are not supported; there is no OCR.
-- The search index is held in memory and rebuilt after changes, which suits thousands of chunks, not millions.
+- The search index is held in memory and rebuilt after changes, making it suitable for modest document collections rather than very large-scale deployments.
 - No authentication or per-user separation: it is a single-user tool. Add auth before exposing it publicly.
 - The Claude and OpenAI paths are tested with mocked HTTP only; they were not run against the live APIs in development.
 - Questions are answered one at a time, without chat memory.
