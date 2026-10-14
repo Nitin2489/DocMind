@@ -1,0 +1,13 @@
+Acme Cloud Storage FAQ
+
+What is the free plan limit? The free plan includes 5 GB of storage and allows files up to 100 MB each.
+
+How much does the Pro plan cost? The Pro plan costs 9 dollars per month and includes 2 TB of storage with files up to 50 GB.
+
+Can I recover deleted files? Deleted files stay in the trash for 30 days. After that they are permanently removed and cannot be restored.
+
+How do I enable two-factor authentication? Open Settings, choose Security, and select Enable two-factor authentication. You can use an authenticator app or a hardware security key.
+
+Is my data encrypted? Files are encrypted with AES-256 at rest and with TLS 1.3 in transit.
+
+How do I cancel my subscription? Go to Settings, then Billing, and choose Cancel plan. Your Pro features remain active until the end of the billing period.
