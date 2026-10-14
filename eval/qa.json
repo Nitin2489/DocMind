@@ -1,0 +1,17 @@
+[
+  {"q": "How many days of annual leave do I get?", "doc": "leave_policy.md", "must_contain": "24 days"},
+  {"q": "Do unused vacation days carry over?", "doc": "leave_policy.md", "must_contain": "carried over"},
+  {"q": "When do I need a doctor's note for sick leave?", "doc": "leave_policy.md", "must_contain": "medical certificate"},
+  {"q": "How long is paid leave for a new parent who is the primary caregiver?", "doc": "leave_policy.md", "must_contain": "26 weeks"},
+  {"q": "How far ahead must I ask for a long absence?", "doc": "leave_policy.md", "must_contain": "14 days"},
+  {"q": "How many reviewers must approve a pull request?", "doc": "engineering_handbook.md", "must_contain": "two approvals"},
+  {"q": "How quickly must the on-call engineer respond to a page?", "doc": "engineering_handbook.md", "must_contain": "15 minutes"},
+  {"q": "When is the deployment freeze?", "doc": "engineering_handbook.md", "must_contain": "Fridays after 14:00"},
+  {"q": "How often should API keys be rotated?", "doc": "engineering_handbook.md", "must_contain": "90 days"},
+  {"q": "When is a postmortem required?", "doc": "engineering_handbook.md", "must_contain": "SEV1"},
+  {"q": "What storage do I get on the free tier?", "doc": "product_faq.txt", "must_contain": "5 GB"},
+  {"q": "What is the monthly price of the paid plan?", "doc": "product_faq.txt", "must_contain": "9 dollars"},
+  {"q": "How long do removed files stay recoverable?", "doc": "product_faq.txt", "must_contain": "30 days"},
+  {"q": "Which encryption protects my files?", "doc": "product_faq.txt", "must_contain": "AES-256"},
+  {"q": "How do I turn on 2FA?", "doc": "product_faq.txt", "must_contain": "two-factor authentication"}
+]
