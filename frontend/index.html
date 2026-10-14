@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DocMind</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>DocMind</h1>
+    <p class="tagline">Ask questions about your documents. Every answer cites its sources.</p>
+
+    <label class="dropzone" id="dropzone">
+      <input type="file" id="file-input" multiple accept=".pdf,.txt,.md" hidden>
+      <strong>Upload documents</strong>
+      <span>PDF, TXT or Markdown. Drop here or click.</span>
+    </label>
+    <div id="upload-status" class="status" role="status"></div>
+
+    <div class="sidebar-head">
+      <h2>Documents</h2>
+      <button id="select-all" class="link" type="button">Select all</button>
+    </div>
+    <ul id="doc-list" class="doc-list"></ul>
+    <p id="empty-docs" class="muted">No documents yet.</p>
+
+    <p id="mode" class="muted small"></p>
+  </aside>
+
+  <main class="chat">
+    <div id="messages" class="messages" aria-live="polite">
+      <div class="message assistant">
+        <div class="bubble">Upload one or more documents, then ask me anything about them.
+        Tick documents on the left to limit the search to those files.</div>
+      </div>
+    </div>
+    <form id="ask-form" class="ask-form">
+      <input id="question" type="text" maxlength="2000" placeholder="Ask a question about your documents..." autocomplete="off" required>
+      <button type="submit" id="ask-btn">Ask</button>
+    </form>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
